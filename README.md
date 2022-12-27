@@ -70,3 +70,15 @@ yarn start
 - write snapshot changes for detect component level change
 - use tailwind css for fast and pixel perfect desining
 - Create 100% test coverage
+
+
+### preview
+
+
+![plot](./screenshot/1.png)
+![plot](./screenshot/2.png)
+![plot](./screenshot/3.png)
+![plot](./screenshot/4.png)
+![plot](./screenshot/5.png)
+![plot](./screenshot/6.png)
+![plot](./screenshot/7.png)
