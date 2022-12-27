@@ -6,8 +6,11 @@ import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { loginService } from "../../service/authService";
+import { ChatState } from "../../Context/ChatProvider";
 
 const Login = () => {
+  const { setUser } = ChatState();
+
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const toast = useToast();
@@ -43,12 +46,13 @@ const Login = () => {
         position: "bottom",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
+      setUser(data);
       setLoading(false);
       history.push("/chats");
     } catch (error) {
       toast({
         title: "Error Occured!",
-        description: error.response.data.message,
+        description: error?.response?.data?.message,
         status: "error",
         duration: 5000,
         isClosable: true,
